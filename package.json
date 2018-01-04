@@ -1,0 +1,81 @@
+{
+  "name": "kanbandesktop",
+  "productName": "Kanban Desktop",
+  "version": "1.0.0",
+  "description": "Unofficial KanbanFlow Desktop app",
+  "license": "MIT",
+  "repository": "amitkmr/KanbanDesktop",
+  "author": {
+    "name": "amit kumar",
+    "email": "ssamitkmr@gmail.com",
+    "url": "https://github.com/amitkmr"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "electronVersion": "1.4.7",
+  "scripts": {
+    "test": "xo",
+    "start": "electron .",
+    "build": "build -mwl"
+  },
+  "files": [
+    "index.js",
+    "menu.js",
+    "media/logo-tray.png",
+    "media/logo-tray-white.png",
+    "media/logo-tray-blue.png"
+  ],
+  "keywords": [
+    "electron-app",
+    "Kanban Flow App",
+    "Pomodoro",
+    "todo-list",
+    "productivity",
+    "Kanban Desktop App"
+  ],
+  "dependencies": {
+    "electron-config": "^0.1.1",
+    "electron-context-menu": "^0.9.1",
+    "electron-debug": "^0.2.1",
+    "electron-window-state": "^3.0.0"
+  },
+  "devDependencies": {
+    "electron-builder": "^8.6.0",
+    "electron": "^1.4.7",
+    "xo": "*"
+  },
+  "xo": {
+    "esnext": true,
+    "envs": [
+      "node",
+      "browser"
+    ],
+    "ignores": [
+      "dist/**"
+    ],
+    "space": true,
+    "rules": {
+      "brace-style": [
+        2,
+        "1tbs",
+        {
+          "allowSingleLine": true
+        }
+      ]
+    }
+  },
+  "build": {
+    "appId": "com.redcubelabs.kanbandesktop",
+    "mac": {
+      "category": "public.app-category.productivity"
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "rpm",
+        "AppImage"
+      ]
+    }
+  }
+}
