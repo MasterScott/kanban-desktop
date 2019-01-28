@@ -11,10 +11,9 @@ let appIcon;
 function updateBadge(title) {
     const isOSX = Boolean(app.dock);
 
-    const messageCount = (/\(([0-9]+)\)/).exec(title);
     const timer = (/([-0-9]{2}:[-0-9]{2})/).exec(title);
     if (isOSX) {
-        app.dock.setBadge(timer ? timer[0] : '');        
+        app.dock.setBadge(timer ? timer[0] : '');
     }
 
     if (timer) {
@@ -22,6 +21,8 @@ function updateBadge(title) {
         appIcon.setImage(path.join(__dirname, 'media', 'logo-tray-blue.png'));
     } else {
         appIcon.setImage(path.join(__dirname, 'media', 'logo-tray.png'));
+        const win = BrowserWindow.getAllWindows()[0];
+        win.show();
     }
 }
 
