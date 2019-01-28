@@ -1,12 +1,22 @@
 'use strict';
 const path = require('path');
 const fs = require('fs');
+const schedule = require('node-schedule');
 const { app, BrowserWindow, shell, Tray, Menu } = require('electron');
 const appMenu = require('./menu');
 const configStore = require('./config');
 
 let mainWindow;
 let appIcon;
+
+// Make Focus Window every single hour to update the Tasks
+schedule.scheduleJob('0 * * * *', function () {
+    let win = BrowserWindow.getAllWindows()[0];
+    if (win) {
+        win.show();
+    }
+});
+
 
 function updateBadge(title) {
     const isOSX = Boolean(app.dock);
