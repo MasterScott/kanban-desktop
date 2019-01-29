@@ -27,7 +27,15 @@ Built with [Electron](http://electron.atom.io).
 - Build OS X: `$ electron-packager .`
 - Build Linux: `$ npm run build-linux`
 - Build all: `$ npm run build` *(OS X only)*
+- Package OS X: `$ npm run package-mac` *(OS X only)*
 
+
+##### Feature List
+- 
+
+##### Useful Links
+
+[icon conversion](https://iconverticons.com/online/)
 
 ## License
 
