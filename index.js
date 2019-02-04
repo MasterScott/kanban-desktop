@@ -26,7 +26,7 @@ function updateBadge(title) {
         app.dock.setBadge(timer ? timer[0] : '');
     }
 
-    if (timer) {
+    if (timer && timer != "00:00") {
         appIcon.setTitle(timer[0]);
         appIcon.setImage(path.join(__dirname, 'media', 'logo-tray-blue.png'));
     } else {
